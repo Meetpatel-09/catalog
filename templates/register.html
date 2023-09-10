@@ -1,0 +1,38 @@
+{% include 'header.html' %}
+
+
+<div class="container">
+     <div class="card p-5 shadow-sm">
+          <h3>Register Here,</h3>
+          <form action="/register" class="row g-3 mt-2" method="POST">
+               <div class="col-md-6">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname">
+               </div>
+               <div class="col-md-6">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname">
+               </div>
+               <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" name="email">
+               </div>
+               <form class="row g-3">
+                    <div class="col-md-6">
+                         <label for="mobile" class="form-label">Mobile Number</label>
+                         <input type="number" class="form-control" id="mobile" name="mobile">
+                    </div>
+                    <div class="col-md-6">
+                         <label for="inputPassword4" class="form-label">Password</label>
+                         <input type="password" class="form-control" id="inputPassword4" name="password">
+                    </div>
+                    <div class="col-12">
+                         <button type="submit" class="btn btn-primary">Register</button>
+                         <button type="reset" class="btn btn-warning">Reset</button>
+                    </div>
+               </form>
+     </div>
+</div>
+
+
+{% include 'footer.html' %}

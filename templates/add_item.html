@@ -1,0 +1,23 @@
+{% include 'header.html' %}
+
+<div class="container">
+     <div class="card p-5 shadow-sm">
+          <h3>Add Product</h3>
+          <form action="/add_item" method="POST" enctype="multipart/form-data">
+               <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                         name="title">
+               </div>
+               <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="exampleInputPassword1" name="image">
+               </div>
+               <button type="submit" class="btn btn-primary">
+                    Add Item
+               </button>
+          </form>
+     </div>
+</div>
+
+{% include 'footer.html' %}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>{{ title }}</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+     <!-- Title Logo  -->
+     <link rel="shortcut icon" href="/static/images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+     <div class="container">
+          <header
+               class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+               <div class="col-md-3 mb-2 mb-md-0">
+                    <p class="h4">Catalog App</p>
+               </div>
+
+               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+
+
+                    <li><a href="/" class="nav-link px-2">Home</a></li>
+                    {% if session['admin'] %}
+                    <li><a href="/manage_items" class="nav-link px-2">Manage Item</a></li>
+                    {% else %}
+                    {% if session['user_id'] %}
+                    <li><a href="/favourites" class="nav-link px-2">Favourites</a></li>
+                    {% endif %}
+                    <li><a href="/contact_us" class="nav-link px-2">Contact Us</a></li>
+                    {% endif %}
+                    <!-- <li><a href="#" class="nav-link px-2">FAQs</a></li>
+                    <li><a href="#" class="nav-link px-2">About</a></li> -->
+               </ul>
+
+               <div class="col-md-3 text-end">
+                    {% if session['user_id'] or session['admin'] %}
+                    <a href="/logout" class="btn btn-outline-danger me-2">Log Out</a>
+                    {% else %}
+                    <a href="/login" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="/register" class="btn btn-primary">Register</a>
+                    {% endif %}
+               </div>
+          </header>
+     </div>
